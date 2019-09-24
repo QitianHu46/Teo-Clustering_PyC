@@ -246,7 +246,7 @@ class ClusterAnalysis:
     def DBSCAN(self, eps_value=.1, min_samples=10,
                draw=False, export=False, analyze_area=True,
                k_dist_analysis=False):
-        start_time = time.time()
+        start_time = time.time() 
 
         from sklearn.cluster import DBSCAN
         from sklearn import metrics

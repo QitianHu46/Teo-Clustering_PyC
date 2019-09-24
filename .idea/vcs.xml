@@ -3,5 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/FileStack/Version-3.9" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Teo-Clustering_PyC" vcs="Git" />
   </component>
 </project>
