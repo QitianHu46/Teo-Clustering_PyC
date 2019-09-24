@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ac6c33e-6626-492b-8e73-5d9bf49b8ed2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Teo-Clustering_PyC" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Analysis_Cluster.py" beforeDir="false" afterPath="$PROJECT_DIR$/Analysis_Cluster.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FileStack/Version-3.9/Data/*Teo_Map.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Insubstantial_structures.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Insubstantial_structures.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Residences.shp" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Residences.shp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rsd_array_GeometricCentroids.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/rsd_array_GeometricCentroids.csv" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,6 +45,11 @@
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.spelling" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Data" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -199,12 +209,22 @@
       <workItem from="1567608075447" duration="35000" />
       <workItem from="1568618666065" duration="717000" />
       <workItem from="1569230319275" duration="69000" />
-      <workItem from="1569262050495" duration="445000" />
+      <workItem from="1569262050495" duration="6504000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

@@ -3,10 +3,7 @@ from Analysis_Area import AreaAnalysis
 import time
 import matplotlib.pyplot as plt
 from tqdm import tqdm
-
-
-def print_status():
-    print('status')
+import pandas as pd
 
 
 class ClusterAnalysis:
@@ -16,8 +13,8 @@ class ClusterAnalysis:
     #     colors = [hex(I)[2:].zfill(6) for I in range(0, max_value, interval)]
     #     return tuple([(int(i[:2], 16), int(i[2:4], 16), int(i[4:], 16)) for i in colors])
 
-    def __init__(self, ctr_points=np.asarray(list(np.genfromtxt('rsd_array_GeometricCentroids.csv', delimiter=',')) +
-                                             list(np.genfromtxt('Insubstantial_structures.csv', delimiter=',')))
+    def __init__(self, ctr_points=np.asarray(list(np.genfromtxt('Data/rsd_array_GeometricCentroids.csv', delimiter=',')) +
+                                             list(np.genfromtxt('Data/Insubstantial_structures.csv', delimiter=',')))
                  ):
         assert len(ctr_points) == 2454 + 824
         self.ctr = ctr_points
@@ -245,8 +242,8 @@ class ClusterAnalysis:
 
     def DBSCAN(self, eps_value=.1, min_samples=10,
                draw=False, export=False, analyze_area=True,
-               k_dist_analysis=False):
-        start_time = time.time() 
+               n_dist_analysis=False):
+        start_time = time.time()
 
         from sklearn.cluster import DBSCAN
         from sklearn import metrics
@@ -307,8 +304,40 @@ class ClusterAnalysis:
                                                ctr_points=self.ctr,
                                                areas=np.genfromtxt('Area_3278.csv', delimiter=','))
 
-        if k_dist_analysis:
-            pass
+        if n_dist_analysis:
+            from scipy.spatial import distance_matrix
+            from scipy.spatial import minkowski_distance
+
+            assert len(ctr_points) == 3278
+
+            dm = pd.DataFrame([[0 for i in range(3278)] for j in range(3278)])
+
+            # create distance matrix
+            for i in tqdm(range(3278)):
+                for j in range(i, 3278):
+                    dm[i][j] = minkowski_distance(ctr_points[i], ctr_points[j])
+            for i in tqdm(range(3278)):
+                for j in range(0, i):
+                    dm[i][j] = dm[j][i]
+            dm.to_csv('Data/Distance_Matrix_3278.csv')
+
+            # Plot the kth distance graph
+            def nth_smallest(pd_series, n):
+                return max(pd_series.nsmallest(n))
+
+            def plot_for_n(dataframe, n):
+                nth_dists = []
+                for i in range(len(dataframe)):
+                    nth_dists.append(nth_smallest(dataframe[i], n))
+                nth_dists = sorted(nth_dists)
+                plt.plot(nth_dists)
+                plt.title('Arrangement for ' + str(n) + 'th Distance')
+                plt.xlabel('number of points')
+                plt.ylabel(str(n) + 'th Distance')
+                plt.show()
+
+            for i in range(2, 10):
+                plot_for_n(dataframe=dm, n=i)
 
         print("DBSCAN Run Time: ", str(time.time() - start_time))
 
@@ -316,11 +345,10 @@ class ClusterAnalysis:
 if __name__ == "__main__":
     a = ClusterAnalysis()
 
-    a.kmeans(kvalue=13, draw=True, SSE_graph=True, compare_with_random=0,
+    a.kmeans(kvalue=13, draw=True, SSE_graph=True, compare_with_random=1,
              export=False)
 
 
-    #
 
     # a.kmeans(kvalue=15, draw=True)
     a.meanshift(bandwidth=800, draw=True,
