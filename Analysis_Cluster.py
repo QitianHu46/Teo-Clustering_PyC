@@ -4,26 +4,28 @@ import time
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 import pandas as pd
+from sklearn.cluster import MeanShift
+from sklearn.cluster import KMeans
+from sklearn.cluster import DBSCAN
+from sklearn import metrics
 
 
 class ClusterAnalysis:
-    # def get_spaced_colors(n):
-    #     max_value = 16581375  # 255**3
-    #     interval = int(max_value / n)
-    #     colors = [hex(I)[2:].zfill(6) for I in range(0, max_value, interval)]
-    #     return tuple([(int(i[:2], 16), int(i[2:4], 16), int(i[4:], 16)) for i in colors])
 
-    def __init__(self, ctr_points=np.asarray(list(np.genfromtxt('Data/rsd_array_GeometricCentroids.csv', delimiter=',')) +
-                                             list(np.genfromtxt('Data/Insubstantial_structures.csv', delimiter=',')))
+    def __init__(self,
+                 # ctr_points=np.asarray(list(np.genfromtxt('Data/rsd_array_GeometricCentroids.csv', delimiter=',')) +
+                 #                       list(np.genfromtxt('Data/Insubstantial_structures.csv', delimiter=',')))
+                 # ctr_points = np.genfromtxt('Data/Total_Centroids-added_households.txt')
+                 ctr_points=np.genfromtxt('Data/Total_Centroids-added_households.txt')
                  ):
-        assert len(ctr_points) == 2454 + 824
+        # assert len(ctr_points) == 2454 + 824
+        self.len_ctr_points = 15687
+        assert len(ctr_points) == 14973 + 714 == self.len_ctr_points
         self.ctr = ctr_points
         self.km_labels, self.km_error, self.km_centers = 0, 0, 0
 
-    def kmeans(self, kvalue=10, draw=False, export=False,
+    def kmeans(self, kvalue=10, draw=False, savegraph=False, export=False,
                analyze_area=False, SSE_graph=False, compare_with_random=0):
-
-        from sklearn.cluster import KMeans
 
         km = KMeans(n_clusters=kvalue, init="k-means++", n_init=100,
                     max_iter=3000, tol=1e-7, random_state=None)
@@ -47,81 +49,19 @@ class ClusterAnalysis:
             # Draw centers
             plt.scatter(km.cluster_centers_[:, 0], km.cluster_centers_[:, 1],
                         c='r', s=100)
-            plt.title("K-Means Clustering of Residences in Points \n num of Clusters: 10")
+            plt.title("K-Means Clustering with Stacked Points as weight \n "
+                      "num of Clusters: " + str(kvalue))
+
+            if savegraph:
+                plt.savefig('Data/Export/' + str(self.len_ctr_points) +
+                            'labels-Kmeans-k=' + str(kvalue) + '.png')
             plt.show()
 
         if export:
-            import json
-            import fiona
-
-            resMap = fiona.open('Data/Original_Data/Residences.shp')
-            insubMap = fiona.open('Data/Original_Data/insubs_Teo/Small_Features.shp')
-            assert len(resMap) == 2456
-            assert len(insubMap) == 824
-            totalMap = []
-            for i in resMap:
-                totalMap.append(i)
-            for i in insubMap:
-                totalMap.append(i)
-            for i in range(len(totalMap)):
-                totalMap[i]['properties']['Id'] = i
-
-            labels = [int(i) for i in self.km_labels]
-            kmeans_num_list = labels[:2447] + [-1, -1] + labels[2447:]
-            assert len(kmeans_num_list) == len(totalMap)
-
-            # kmeans_num_list = np.genfromtxt("Data/Export/kmeans-total-list-plus2error.csv", delimiter=",")
-            # meanshift_num_list = np.genfromtxt("Data/Export/meanshift-total-list-plus2error.csv", delimiter=",")
-            # DBSCAN_num_list = np.genfromtxt("Data/Export/DBSCAN-total-list-plus2error.csv", delimiter=",")
-            # kmeans_num_list = [int(i) for i in kmeans_num_list]
-            # meanshift_num_list = [int(i) for i in meanshift_num_list]
-            # DBSCAN_num_list = [int(i) for i in DBSCAN_num_list]
-            # assert len(kmeans_num_list) == len(totalMap) == len(DBSCAN_num_list) == len(meanshift_num_list)
-
-            for i in range(len(totalMap)):
-                if totalMap[i]['properties']['Id'] == i:
-                    totalMap[i]["properties"]['kmeans_num'] = kmeans_num_list[i]
-                    totalMap[i]["properties"].pop('Apt_TMP_ID', None)
-                    totalMap[i]["properties"].pop('Apt_label', None)
-                    totalMap[i]["properties"].pop('Apt_ID', None)
-                    totalMap[i]["properties"].pop('Apt_sub_ID', None)
-                else:
-                    print(i, 'error')
-
-            # Method II: My own method
-            # method 2: USE DUMPED FILE
-            for i in range(len(totalMap)):
-                path = 'Data/Export/individual_shapes/' + str(i) + '.json'
-                with open(path, 'w') as file:
-                    json.dump(totalMap[i], file)
-            # write the files independently
-            shape_total = ''
-
-            # combine them mechanically
-            for i in range(len(totalMap)):
-                path = 'Data/Export/individual_shapes/' + str(i) + '.json'
-                with open(path, 'r') as file:
-                    shape = str(json.load(file))
-                shape_total += shape
-            shape_total = '''{ "type": "FeatureCollection","features": [''' + shape_total + ''']}'''
-
-            # Replace all the errors
-            double_quote = """ " """[1]
-            with open('Data/Export/total_shape_'+'kmeans-k='+str(kvalue)+'.json', 'w') as file:
-                # with open('Data/Export/total_shape1.json', 'w') as file:
-                shape_total = shape_total.replace("None", "null")
-                shape_total = shape_total.replace("""'""", double_quote)
-                file.write(shape_total)
-
-
-            # np.savetxt("Data/Export/kmeans-total-list-plus2error.csv",
-            #            np.asarray(list(self.km_labels[:2447]) + [-1, -1] +
-            #                       list(self.km_labels[2447:])),
-            #            delimiter=",")
-
-            print('Export Finishes')
-
-
+            np.savetxt('Data/Export/' + str(self.len_ctr_points) +
+                       'labels-Kmeans-k=' + str(kvalue) + '.csv',
+                       self.km_labels)
+            # export the list of labels
 
         if analyze_area:
             self.km_area_result = AreaAnalysis(labels=self.km_labels,
@@ -195,10 +135,71 @@ class ClusterAnalysis:
             plt.title('SEE Graph for K-Means \ncompared with ' + str(compare_with_random) + 'random sets')
             plt.show()
 
-    def meanshift(self, bandwidth=700, draw=False,
-                  export=False, analyze_area=True):
-        start_time = time.time()
-        from sklearn.cluster import MeanShift
+        # if export:
+        #     import json
+        #     import fiona
+        #
+        #     resMap = fiona.open('Data/Original_Data/Residences.shp')
+        #     insubMap = fiona.open('Data/Original_Data/insubs_Teo/Small_Features.shp')
+        #     assert len(resMap) == 2456
+        #     assert len(insubMap) == 824
+        #     totalMap = []
+        #     for i in resMap:
+        #         totalMap.append(i)
+        #     for i in insubMap:
+        #         totalMap.append(i)
+        #     for i in range(len(totalMap)):
+        #         totalMap[i]['properties']['Id'] = i
+        #
+        #     labels = [int(i) for i in self.km_labels]
+        #     kmeans_num_list = labels[:2447] + [-1, -1] + labels[2447:]
+        #     assert len(kmeans_num_list) == len(totalMap)
+        #
+        #     for i in range(len(totalMap)):
+        #         if totalMap[i]['properties']['Id'] == i:
+        #             totalMap[i]["properties"]['kmeans_num'] = kmeans_num_list[i]
+        #             totalMap[i]["properties"].pop('Apt_TMP_ID', None)
+        #             totalMap[i]["properties"].pop('Apt_label', None)
+        #             totalMap[i]["properties"].pop('Apt_ID', None)
+        #             totalMap[i]["properties"].pop('Apt_sub_ID', None)
+        #         else:
+        #             print(i, 'error')
+        #
+        #     # Method II: My own method
+        #     # method 2: USE DUMPED FILE
+        #     for i in range(len(totalMap)):
+        #         path = 'Data/Export/individual_shapes/' + str(i) + '.json'
+        #         with open(path, 'w') as file:
+        #             json.dump(totalMap[i], file)
+        #     # write the files independently
+        #     shape_total = ''
+        #
+        #     # combine them mechanically
+        #     for i in range(len(totalMap)):
+        #         path = 'Data/Export/individual_shapes/' + str(i) + '.json'
+        #         with open(path, 'r') as file:
+        #             shape = str(json.load(file))
+        #         shape_total += shape
+        #     shape_total = '''{ "type": "FeatureCollection","features": [''' + shape_total + ''']}'''
+        #
+        #     # Replace all the errors
+        #     double_quote = """ " """[1]
+        #     with open('Data/Export/total_shape_' + 'kmeans-k=' + str(kvalue) + '.json', 'w') as file:
+        #         # with open('Data/Export/total_shape1.json', 'w') as file:
+        #         shape_total = shape_total.replace("None", "null")
+        #         shape_total = shape_total.replace("""'""", double_quote)
+        #         file.write(shape_total)
+        #
+        #     # np.savetxt("Data/Export/kmeans-total-list-plus2error.csv",
+        #     #            np.asarray(list(self.km_labels[:2447]) + [-1, -1] +
+        #     #                       list(self.km_labels[2447:])),
+        #     #            delimiter=",")
+        #
+        #     print('Export Finishes')
+
+    def meanshift(self, bandwidth=700, draw=False, savegraph=False,
+                  export=False, analyze_area=False):
+        # start_time = time.time()
 
         ms = MeanShift(bandwidth=bandwidth)  # bandwidth is radius
 
@@ -211,7 +212,7 @@ class ClusterAnalysis:
         self.ms_centers = ms.cluster_centers_
 
         if draw:
-            import matplotlib.pyplot as plt
+            # import matplotlib.pyplot as plt
 
             plt.figure(figsize=(15, 15), facecolor='.6')
             colors = ['r.', 'c.', 'b.', 'k.', 'y.', 'm.', 'g.', 'b.', 'k.', 'y.', 'm.'] * 10
@@ -222,34 +223,46 @@ class ClusterAnalysis:
 
             # paint center points
             plt.scatter(self.ms_centers[:, 0], self.ms_centers[:, 1],
-                        marker='x', s=100, linewidths=0.3, zorder=10)
+                        c='r', s=100)
 
-            plt.title("MeanShift Clustering\nCenters are crosses \n Num of Clusters: %d"
-                      % len(np.unique(self.ms_labels)))
+            plt.title("MeanShift Clustering\n" +
+                      "Num of Clusters:" + str(len(np.unique(self.ms_labels))) +
+                      " bandwidth = " + str(bandwidth))
+
+            if savegraph:
+                plt.savefig('Data/Export/' + str(self.len_ctr_points) +
+                            'labels-MeanShift-bandwidth=' + str(bandwidth) + '.png')
+
             plt.show()
 
         if export:
-            np.savetxt("Data/Export/meanshift-total-list-plus2error.csv",
-                       np.asarray(list(self.ms_labels[:2447]) + [-1, -1] +
-                                  list(self.ms_labels[2447:])),
-                       delimiter=",")
+            np.savetxt('Data/Export/' + str(self.len_ctr_points) +
+                       'labels-MeanShift-bandwidth=' + str(bandwidth) + '.csv',
+                       self.ms_labels)
+            # export the list of labels
+        # if export:
+        #     np.savetxt("Data/Export/meanshift-total-list-plus2error.csv",
+        #                np.asarray(list(self.ms_labels[:2447]) + [-1, -1] +
+        #                           list(self.ms_labels[2447:])),
+        #                delimiter=",")
 
         if analyze_area:
             self.ms_area_result = AreaAnalysis(labels=self.ms_labels,
                                                ctr_points=self.ctr,
                                                areas=np.genfromtxt('Area_3278.csv', delimiter=','))
-        print("MeanShift Run Time:" % (time.time() - start_time))
 
-    def DBSCAN(self, eps_value=.1, min_samples=10,
-               draw=False, export=False, analyze_area=True,
-               n_dist_analysis=False):
+        # print("MeanShift Run Time:" % (time.time() - start_time))
+
+    def DBSCAN(self, eps_value=100, min_samples=4, draw=False, savegraph=False,
+               export=False, analyze_area=False, n_dist_analysis=False):
         start_time = time.time()
 
-        from sklearn.cluster import DBSCAN
-        from sklearn import metrics
-        from sklearn.preprocessing import StandardScaler
+        # from sklearn.cluster import DBSCAN
+        # from sklearn import metrics
+        # from sklearn.preprocessing import StandardScaler
 
-        X = StandardScaler().fit_transform(self.ctr)
+        # X = StandardScaler().fit_transform(self.ctr)
+        X = self.ctr
 
         db = DBSCAN(eps=eps_value, min_samples=min_samples).fit(X)
 
@@ -272,11 +285,11 @@ class ClusterAnalysis:
             # Black removed and is used for noise instead.
             unique_labels = set(self.db_labels)
             colors = [plt.cm.Spectral(each) for each in np.linspace(0, 1, len(unique_labels))]
+
             for k, col in zip(unique_labels, colors):
                 if k == -1:
                     # Black used for noise.
                     col = [0, 0, 0, 1]
-
                 class_member_mask = (self.db_labels == k)
 
                 xy = X[class_member_mask & self.db_core_samples_mask]
@@ -288,16 +301,26 @@ class ClusterAnalysis:
                          markeredgecolor=None, markersize=1)
 
             plt.title(
-                'DBSCAN - num of clusters: %d \npoints with cover \
-                are core point, while others are phriphery points' % len(unique_labels))
+                'DBSCAN - num of clusters: %d \npoints with cover are core point'
+                ', while others are phriphery points' % (len(unique_labels) - 1) +
+                '\neps_vaue = ' + str(eps_value) + ' ;min_samples = ' + str(min_samples)
+            )
+
+            if savegraph:
+                plt.savefig('Data/Export/' + str(self.len_ctr_points) +
+                            'labels-DBSCAN-eps=' + str(eps_value) + '.png')
 
             plt.show()
 
         if export:
-            np.savetxt("Data/Export/DBSCAN-total-list-plus2error.csv",
-                       np.asarray(list(self.db_labels[:2447]) + [-1, -1] +
-                                  list(self.db_labels[2447:])),
-                       delimiter=",")
+            np.savetxt('Data/Export/' + str(self.len_ctr_points) +
+                       'labels-DBSCAN-eps=' + str(eps_value) + '.csv',
+                       self.db_labels)
+        # if export:
+        #     np.savetxt("Data/Export/DBSCAN-total-list-plus2error.csv",
+        #                np.asarray(list(self.db_labels[:2447]) + [-1, -1] +
+        #                           list(self.db_labels[2447:])),
+        #                delimiter=",")
 
         if analyze_area:
             self.db_area_result = AreaAnalysis(labels=self.db_labels,
@@ -308,19 +331,9 @@ class ClusterAnalysis:
             from scipy.spatial import distance_matrix
             from scipy.spatial import minkowski_distance
 
-            assert len(ctr_points) == 3278
+            dm = pd.read_csv('Data/Distance_Matrix_3278.csv')
 
-            dm = pd.DataFrame([[0 for i in range(3278)] for j in range(3278)])
-
-            # create distance matrix
-            for i in tqdm(range(3278)):
-                for j in range(i, 3278):
-                    dm[i][j] = minkowski_distance(ctr_points[i], ctr_points[j])
-            for i in tqdm(range(3278)):
-                for j in range(0, i):
-                    dm[i][j] = dm[j][i]
-            dm.to_csv('Data/Distance_Matrix_3278.csv')
-
+            # StandardScaler().fit_transform
             # Plot the kth distance graph
             def nth_smallest(pd_series, n):
                 return max(pd_series.nsmallest(n))
@@ -328,7 +341,10 @@ class ClusterAnalysis:
             def plot_for_n(dataframe, n):
                 nth_dists = []
                 for i in range(len(dataframe)):
-                    nth_dists.append(nth_smallest(dataframe[i], n))
+                    nth_dists.append(
+                        nth_smallest(dataframe[i], n)
+                    )
+
                 nth_dists = sorted(nth_dists)
                 plt.plot(nth_dists)
                 plt.title('Arrangement for ' + str(n) + 'th Distance')
@@ -336,38 +352,89 @@ class ClusterAnalysis:
                 plt.ylabel(str(n) + 'th Distance')
                 plt.show()
 
-            for i in range(2, 10):
-                plot_for_n(dataframe=dm, n=i)
+            if isinstance(n_dist_analysis, int):
+                plot_for_n(dm, n_dist_analysis)
+            elif isinstance(n_dist_analysis, list):
+                for i in n_dist_analysis:
+                    plot_for_n(dm, i)
+            else:
+                print('Variable \'n_dist_analysis\' type error')
 
         print("DBSCAN Run Time: ", str(time.time() - start_time))
 
 
 if __name__ == "__main__":
+    import time
+
+    t = time.time()
+
     a = ClusterAnalysis()
 
-    a.kmeans(kvalue=13, draw=True, SSE_graph=True, compare_with_random=1,
-             export=False)
+    # a.kmeans(kvalue=50, draw=True, savegraph=True,
+    #          SSE_graph=False, compare_with_random=0,
+    #          export=True)
 
+    # a.meanshift(bandwidth=265, draw=True, savegraph=True,
+    # export=True, analyze_area=False)
 
+    a.DBSCAN(eps_value=111.5, draw=True, savegraph=True,
+             export=True, analyze_area=False, n_dist_analysis=False)
 
-    # a.kmeans(kvalue=15, draw=True)
-    a.meanshift(bandwidth=800, draw=True,
-                  export=False, analyze_area=False)
-    # 800 - 9
-    # 700 - 14
-    # 600 - 17
-    # 500 - 27
-    # 400 - 40
+    a.DBSCAN(eps_value=120, draw=False, savegraph=False,
+             export=False, analyze_area=False, n_dist_analysis=False)
 
-    # a.DBSCAN(draw=True)
+    print('Fin in ' + str(time.time() - t))
 
-    # import numpy as np
-    # from Analysis_Area import AreaAnalysis
-    # import time
-    # import matplotlib.pyplot as plt
-    # from sklearn.cluster import KMeans
-
-    # Intra-class debugging
+    # meanshift notes
+    # if True:
+    #     # MEANSHIFT
+    #     # NEW
+    #     # 650 -- 15
+    #
+    #     # 550 : 21
+    #     # 553 : 22
+    #     # 554 : 19
+    #     # 555 : 19
+    #     # 560 : 19
+    #
+    #     # 265 - 99
+    #     # 270 - 96
+    #     # 300 - 75
+    #     # 320 - 67
+    #     # 325 - 63
+    #     # 335 - 58
+    #     # 345 - 54
+    #     # 350 - 51
+    #     # 352 - 53
+    #     # 353 - 52
+    #     # 354 - 52
+    #     # 355 - 48
+    #
+    #     # 200 - 178
+    #
+    # # DBSCAN notes
+    # if True:
+    #     # NEW
+    #     # 100 - 129
+    #     # 180 - 22
+    #     # 182 - 22
+    #     # 184 - 20
+    #     # 185 - 18
+    #     # 190 - 17
+    #
+    #     # 200 - 17
+    #
+    #
+    #
+    #     # old:
+    #     # a.DBSCAN(draw=True)
+    #     # 800 - 9
+    #     # 700 - 14
+    #     # 600 - 17
+    #     # 500 - 27
+    #     # 400 - 40
+    #
+    # # Intra-class debugging
 
     if False:
         import numpy as np
@@ -431,12 +498,12 @@ if __name__ == "__main__":
         # plt.ylabel("Sum of Squared Error (SSE)")
         # plt.show()
 
-
     # Export to geoJSON
     if False:
         import json
         import fiona
         import os
+
         os.environ['GDAL_DATA'] = \
             '/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/fiona/gdal_data/'
 
@@ -448,8 +515,6 @@ if __name__ == "__main__":
         # print('is file: ' + str(os.path.isfile(gcs_csv)))
         # st = os.stat(gcs_csv)
         # print('is readable: ' + str(bool(st.st_mode & stat.S_IRGRP)))
-
-
 
         resMap = fiona.open('Data/Original_Data/Residences.shp')
         # resMap = fiona.open('/Users/qitianhu/Desktop/a.shp')
