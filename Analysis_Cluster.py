@@ -1,6 +1,10 @@
+'''
+This file is a general analysis to the Clusters in Teotihuacan
+'''
+
 import numpy as np
-from Analysis_Area import AreaAnalysis
-import time
+# from Analysis_Area import AreaAnalysis
+# import time
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 import pandas as pd
@@ -53,12 +57,12 @@ class ClusterAnalysis:
                       "num of Clusters: " + str(kvalue))
 
             if savegraph:
-                plt.savefig('Data/Export/' + str(self.len_ctr_points) +
+                plt.savefig('Export/' + str(self.len_ctr_points) +
                             'labels-Kmeans-k=' + str(kvalue) + '.png')
             plt.show()
 
         if export:
-            np.savetxt('Data/Export/' + str(self.len_ctr_points) +
+            np.savetxt('Export/' + str(self.len_ctr_points) +
                        'labels-Kmeans-k=' + str(kvalue) + '.csv',
                        self.km_labels)
             # export the list of labels
@@ -168,7 +172,7 @@ class ClusterAnalysis:
         #     # Method II: My own method
         #     # method 2: USE DUMPED FILE
         #     for i in range(len(totalMap)):
-        #         path = 'Data/Export/individual_shapes/' + str(i) + '.json'
+        #         path = 'Export/individual_shapes/' + str(i) + '.json'
         #         with open(path, 'w') as file:
         #             json.dump(totalMap[i], file)
         #     # write the files independently
@@ -176,7 +180,7 @@ class ClusterAnalysis:
         #
         #     # combine them mechanically
         #     for i in range(len(totalMap)):
-        #         path = 'Data/Export/individual_shapes/' + str(i) + '.json'
+        #         path = 'Export/individual_shapes/' + str(i) + '.json'
         #         with open(path, 'r') as file:
         #             shape = str(json.load(file))
         #         shape_total += shape
@@ -184,13 +188,13 @@ class ClusterAnalysis:
         #
         #     # Replace all the errors
         #     double_quote = """ " """[1]
-        #     with open('Data/Export/total_shape_' + 'kmeans-k=' + str(kvalue) + '.json', 'w') as file:
-        #         # with open('Data/Export/total_shape1.json', 'w') as file:
+        #     with open('Export/total_shape_' + 'kmeans-k=' + str(kvalue) + '.json', 'w') as file:
+        #         # with open('Export/total_shape1.json', 'w') as file:
         #         shape_total = shape_total.replace("None", "null")
         #         shape_total = shape_total.replace("""'""", double_quote)
         #         file.write(shape_total)
         #
-        #     # np.savetxt("Data/Export/kmeans-total-list-plus2error.csv",
+        #     # np.savetxt("Export/kmeans-total-list-plus2error.csv",
         #     #            np.asarray(list(self.km_labels[:2447]) + [-1, -1] +
         #     #                       list(self.km_labels[2447:])),
         #     #            delimiter=",")
@@ -230,18 +234,18 @@ class ClusterAnalysis:
                       " bandwidth = " + str(bandwidth))
 
             if savegraph:
-                plt.savefig('Data/Export/' + str(self.len_ctr_points) +
+                plt.savefig('Export/' + str(self.len_ctr_points) +
                             'labels-MeanShift-bandwidth=' + str(bandwidth) + '.png')
 
             plt.show()
 
         if export:
-            np.savetxt('Data/Export/' + str(self.len_ctr_points) +
+            np.savetxt('Export/' + str(self.len_ctr_points) +
                        'labels-MeanShift-bandwidth=' + str(bandwidth) + '.csv',
                        self.ms_labels)
             # export the list of labels
         # if export:
-        #     np.savetxt("Data/Export/meanshift-total-list-plus2error.csv",
+        #     np.savetxt("Export/meanshift-total-list-plus2error.csv",
         #                np.asarray(list(self.ms_labels[:2447]) + [-1, -1] +
         #                           list(self.ms_labels[2447:])),
         #                delimiter=",")
@@ -307,17 +311,17 @@ class ClusterAnalysis:
             )
 
             if savegraph:
-                plt.savefig('Data/Export/' + str(self.len_ctr_points) +
+                plt.savefig('Export/' + str(self.len_ctr_points) +
                             'labels-DBSCAN-eps=' + str(eps_value) + '.png')
 
             plt.show()
 
         if export:
-            np.savetxt('Data/Export/' + str(self.len_ctr_points) +
+            np.savetxt('Export/' + str(self.len_ctr_points) +
                        'labels-DBSCAN-eps=' + str(eps_value) + '.csv',
                        self.db_labels)
         # if export:
-        #     np.savetxt("Data/Export/DBSCAN-total-list-plus2error.csv",
+        #     np.savetxt("Export/DBSCAN-total-list-plus2error.csv",
         #                np.asarray(list(self.db_labels[:2447]) + [-1, -1] +
         #                           list(self.db_labels[2447:])),
         #                delimiter=",")
@@ -378,7 +382,7 @@ if __name__ == "__main__":
     # export=True, analyze_area=False)
 
     a.DBSCAN(eps_value=111.5, draw=True, savegraph=True,
-             export=True, analyze_area=False, n_dist_analysis=False)
+             export=False, analyze_area=False, n_dist_analysis=False)
 
     a.DBSCAN(eps_value=120, draw=False, savegraph=False,
              export=False, analyze_area=False, n_dist_analysis=False)
@@ -533,9 +537,9 @@ if __name__ == "__main__":
         kmeans_num_list = labels[:2447] + [-1, -1] + labels[2447:]
         assert len(kmeans_num_list) == len(totalMap)
 
-        # kmeans_num_list = np.genfromtxt("Data/Export/kmeans-total-list-plus2error.csv", delimiter=",")
-        # meanshift_num_list = np.genfromtxt("Data/Export/meanshift-total-list-plus2error.csv", delimiter=",")
-        # DBSCAN_num_list = np.genfromtxt("Data/Export/DBSCAN-total-list-plus2error.csv", delimiter=",")
+        # kmeans_num_list = np.genfromtxt("Export/kmeans-total-list-plus2error.csv", delimiter=",")
+        # meanshift_num_list = np.genfromtxt("Export/meanshift-total-list-plus2error.csv", delimiter=",")
+        # DBSCAN_num_list = np.genfromtxt("Export/DBSCAN-total-list-plus2error.csv", delimiter=",")
         # kmeans_num_list = [int(i) for i in kmeans_num_list]
         # meanshift_num_list = [int(i) for i in meanshift_num_list]
         # DBSCAN_num_list = [int(i) for i in DBSCAN_num_list]
@@ -554,7 +558,7 @@ if __name__ == "__main__":
         # Method II: My own method
         # method 2: USE DUMPED FILE
         for i in range(len(totalMap)):
-            path = 'Data/Export/individual_shapes/' + str(i) + '.json'
+            path = 'Export/individual_shapes/' + str(i) + '.json'
             with open(path, 'w') as file:
                 json.dump(totalMap[i], file)
         # write the files independently
@@ -562,7 +566,7 @@ if __name__ == "__main__":
 
         # combine them mechanically
         for i in range(len(totalMap)):
-            path = 'Data/Export/individual_shapes/' + str(i) + '.json'
+            path = 'Export/individual_shapes/' + str(i) + '.json'
             with open(path, 'r') as file:
                 shape = str(json.load(file))
             shape_total += shape
@@ -570,8 +574,8 @@ if __name__ == "__main__":
 
         # Replace all the errors
         double_quote = """ " """[1]
-        with open('Data/Export/total_shape_' + 'kmeans-k=' + str(kvalue) + '.json', 'w') as file:
-            # with open('Data/Export/total_shape1.json', 'w') as file:
+        with open('Export/total_shape_' + 'kmeans-k=' + str(kvalue) + '.json', 'w') as file:
+            # with open('Export/total_shape1.json', 'w') as file:
             shape_total = shape_total.replace("None", "null")
             shape_total = shape_total.replace("""'""", double_quote)
             file.write(shape_total)

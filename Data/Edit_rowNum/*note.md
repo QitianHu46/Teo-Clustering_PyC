@@ -1,1 +1,0 @@
-The Id column in Residences and insubstantial structures have been changed to @row_number
