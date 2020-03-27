@@ -14,8 +14,10 @@ from os import walk
 from shapely.geometry import Point, Polygon, MultiPolygon, LineString
 import matplotlib.pyplot as plt
 import random
+import seaborn as sns
+import scipy
 
-source_path = 'Export/2-20_Cluster_Statistics/'
+source_path = 'Export/3-7_Cluster_Statistics/'
 
 
 # %% ########## Define Gini and Plot_Ideal ##########
@@ -56,11 +58,123 @@ def plt_ideal(a, b):
 	plt.scatter(X * (b - a) + a, Y,
 				s=1, alpha=.8, c='orange')
 
+def plot_log_with_stat(x, y, files, xlabel='x', ylabel='y' ,title='title', plotit=True):
+	"""
+	plot on single graph, using scipy and seaborn, with 95% CI and relevant statistics
+	:param x:
+	:param y:
+	:param xlabel:
+	:param ylabel:
+	:return: the object of the graph
+	"""
+	num = len(files)
+	fig = plt.figure(figsize=(6 * num, 6), dpi=1000)
+	for i in range(num):
+		dtf = pd.read_csv(source_path + files[i])
+		fig.add_subplot(1, num, i + 1)
+		sns.regplot(x=np.log(dtf[x]), y=np.log(dtf[y]), ci=95, fit_reg=True)
+		plt.xlabel(x)
+		plt.ylabel(y)
+		# plt.set(xlabel=xlabel, ylabel=ylabel)
+		# line_x = ax.get_lines()[0].get_xdata()
+		# line_y = ax.get_lines()[0].get_ydata()
+		slope, intercept, corr_coeff, p_value, std_err = scipy.stats.linregress(np.log(dtf[x]), np.log(dtf[y]))
+		info = list(map(lambda k: round(k, 3), [slope, intercept, corr_coeff ** 2, p_value, std_err]))
+		title_str = files[i][:-4] + '\nslope: ' + str(info[0]) + ', intercept: ' + str(info[1]) + \
+		            ', \nr squared:' + str(info[2])
+		plt.title(title_str)
+	# ax.plot()
+	if plotit:
+		plt.show()
+	else:
+		plt.savefig('Export/3-7_Cluster_Statistics/relatin_graphs/'
+			 + x + '_vs_' + y + '_'+ files[0].split('=')[0] + '.png')
+	return
+
+
+def plot_log_with_stat_dense(x, y, file_list, xlabel='x', ylabel='y' ,title='title', plotit=True):
+	"""
+	plot on single graph, using scipy and seaborn, with 95% CI and relevant statistics
+	:param x:
+	:param y:
+	:param xlabel:
+	:param ylabel:
+	:return: the object of the graph
+	"""
+	dont_log = ['label', 'Area_gini', 'building_density', 'high', 'mid', 'low', 'status_Gini']
+	dont_log = all_cols
+	assert len(file_list) == 10
+	num = len(file_list)
+	fig = plt.figure(figsize=(25, 30), dpi=300)
+	for i in range(10):
+		dtf = pd.read_csv(source_path + file_list[i])[[x, y]]
+		fig.add_subplot(4, 3, i + 1)
+		remove_notice = ''
+		if x in dont_log:
+			data_x = dtf[x]
+			x_label = x
+		else:
+			# if (0 in dtf[x].values) or (0 in dtf[y].values):
+			# 	dtf = dtf.replace(0, np.nan)
+			# 	dtf = dtf.dropna()
+			# 	remove_notice = '  !! Zero Term Removed!!  '
+			data_x = np.log(dtf[x])
+			x_label = 'log ' + x
+		if y in dont_log:
+			data_y = dtf[y]
+			y_label = y
+		else:
+			# if (0 in dtf[x].values) or (0 in dtf[y].values):
+			# 	dtf = dtf.replace(0, np.nan)
+			# 	dtf = dtf.dropna()
+			# 	remove_notice = '  !! Zero Term Removed!!  '
+			# 	if ('gini' in x) or ('density' in x):
+			# 		data_x = dtf[x]
+			# 	else:
+			# 		data_x = np.log(dtf[x])
+			data_y = np.log(dtf[y])
+			y_label = 'log ' + y
+
+		sns.regplot(x=data_x, y=data_y, ci=95, fit_reg=True)
+		plt.xlabel(x_label)
+		plt.ylabel(y_label)
+		# plt.set(xlabel=xlabel, ylabel=ylabel)
+		# line_x = ax.get_lines()[0].get_xdata()
+		# line_y = ax.get_lines()[0].get_ydata()
+		slope, intercept, corr_coeff, p_value, std_err = scipy.stats.linregress(data_x, data_y)
+		info = list(map(lambda k: round(k, 3), [slope, intercept, corr_coeff ** 2, p_value, std_err]))
+		title_str = file_list[i][:-4] + remove_notice + \
+		            '\nslope: ' + str(info[0]) + ', intercept: ' + str(info[1]) + \
+		            ',r squared:' + str(info[2])
+		plt.title(title_str)
+	# ax.plot()
+	if plotit:
+		plt.show()
+	else:
+		plt.savefig('Export/3-7_Cluster_Statistics/relatin_graphs/'
+			 + x + '_|_' + y + '.png')
+	return
+#%% DEBUGGING
+i = 7
+x = 'Area_gini'
+y = 'Area_mean'
+
+plt.savefig('/Users/qitianhu/Desktop/a.png')
+
+from sklearn.linear_model import LinearRegression
+
+model = LinearRegression()
+model.fit(np.array(dtf[x]).reshape(-1,1), np.array(dtf[y]).reshape(-1,1))
+
+
+#%% initialize path
+file_list = [i for i in walk(source_path)][0][2]
+if '.DS_Store' in file_list:
+	file_list.remove('.DS_Store')
 
 # %% ############ PLOT Gini vs. Avg_status -- Separate #############
 exporting = False
 use_svg = False
-file_list = [i for i in walk(source_path)][0][2]
 
 # Plot graphs in file_list
 for path in tqdm.tqdm(file_list):
@@ -86,41 +200,37 @@ for path in tqdm.tqdm(file_list):
 		plt.show()
 
 
-# %%Create subplots for KMeans
-if True:
-	km_list = ['Kmeans-k=20.csv',
-			   'Kmeans-k=50.csv',
-			   'Kmeans-k=100.csv']
-	fig = plt.figure(figsize=(10, 4), dpi=1000)
+# %%Create 3 subplots for KMeans
+km_list = ['Kmeans-k=20.csv',
+		   'Kmeans-k=50.csv',
+		   'Kmeans-k=100.csv']
+fig = plt.figure(figsize=(10, 4), dpi=1000)
 
-	for i in range(3):
-		df = pd.read_csv(source_path + km_list[i])
-		# plt.subplot(1, 3, i+1, figsize=(15,15))
-		fig.add_subplot(1, 3, i + 1)
-		plt_ideal(1, 2)
-		plt_ideal(2, 3)
-		plt.scatter(x=df['avg_status'], y=df['status_Gini'],
-					c=None, s=20)
-		plt.ylim((0, .2))
-		plt.xlim((1, 3))
-		# plt.title(path[12:-16])
-		plt.text(1.65, 0.17, km_list[i][:-4])
-		plt.ylabel('Gini Coefficient')
-		plt.xlabel('Average Status of a Cluster')
-	fig.suptitle(t='Gini-Avgerage Status Graph for K-Means')
-	plt.subplots_adjust(wspace=.5, hspace=1)  # 调整子图间距
-	# fig.tight_layout(rect=[.5, .5, .5, .5], h_pad=.5)
-	# plt.show()
-	if exporting:
-		plt.savefig('Export/Gini_status/Combined-Kmeans.jpg', format='jpg')
-	else:
-		plt.show()
-
-
+for i in range(3):
+	df = pd.read_csv(source_path + km_list[i])
+	# plt.subplot(1, 3, i+1, figsize=(15,15))
+	fig.add_subplot(1, 3, i + 1)
+	plt_ideal(1, 2)
+	plt_ideal(2, 3)
+	plt.scatter(x=df['avg_status'], y=df['status_Gini'],
+				c=None, s=20)
+	plt.ylim((0, .2))
+	plt.xlim((1, 3))
+	# plt.title(path[12:-16])
+	plt.text(1.65, 0.17, km_list[i][:-4])
+	plt.ylabel('Gini Coefficient')
+	plt.xlabel('Average Status of a Cluster')
+fig.suptitle(t='Gini-Avgerage Status Graph for K-Means')
+plt.subplots_adjust(wspace=.5, hspace=1)  # 调整子图间距
+# fig.tight_layout(rect=[.5, .5, .5, .5], h_pad=.5)
+# plt.show()
+if exporting:
+	plt.savefig('Export/Gini_status/Combined-Kmeans.jpg', format='jpg')
+else:
+	plt.show()
 
 # %% PLOT different attributes of clusters against each other
-file_list = [i for i in walk(source_path)][0][2]
-# number of household vs. total area
+
 """
 Luis on Mar 1, 2020
 - the labels in some are either unnecessary or don’t look good (for a paper):
@@ -143,41 +253,43 @@ export_path = 'Export/Result_graph/'
 col_x = 'total_households'
 col_y = 'cluster_area'
 seq = '1-'
-if True:
-	fig, axs = plt.subplots(1, 3, figsize=figsize, sharey=False, dpi=dpi)
-	# fig.suptitle('Cluster Area Against Number of Households')
-	for i in range(0, 3):
-		df = pd.read_csv(source_path + file_list[i])
-		axs[i].scatter(df[col_x], df[col_y])
-		axs[i].title.set_text(file_list[i][:-4])
-		if i == 1:
-			axs[i].set_xlabel(col_x)
-		if i == 0:
-			axs[i].set_ylabel(col_y)
-	plt.savefig(export_path + seq + 'Kmeans-' + col_y + '-vs-' + col_x)
 
-	fig, axs = plt.subplots(1, 3, figsize=figsize, sharey=False, dpi=dpi)
-	for i in range(3, 6):
-		df = pd.read_csv(source_path + file_list[i])
-		axs[i - 3].scatter(df[col_x], df[col_y])
-		axs[i - 3].title.set_text(file_list[i][:-4])
-		if i == 4:
-			axs[i - 3].set_xlabel(col_x)
-		if i == 3:
-			axs[i - 3].set_ylabel(col_y)
-	plt.savefig(export_path + seq + 'MeanShift-' + col_y + '-vs-' + col_x)
+fig, axs = plt.subplots(1, 3, figsize=figsize, sharey=False, dpi=dpi)
+# fig.suptitle('Cluster Area Against Number of Households')
+for i in range(0, 3):
+	df = pd.read_csv(source_path + file_list[i])
+	axs[i].scatter(df[col_x], df[col_y])
+	axs[i].title.set_text(file_list[i][:-4])
+	if i == 1:
+		axs[i].set_xlabel(col_x)
+	if i == 0:
+		axs[i].set_ylabel(col_y)
 
-	fig, axs = plt.subplots(1, 3, figsize=figsize, sharey=False, dpi=dpi)
-	for i in range(6, 9):
-		df = pd.read_csv(source_path + file_list[i])
-		axs[i - 6].scatter(df[col_x], df[col_y])
-		axs[i - 6].title.set_text(file_list[i][:-4])
-		if i == 7:
-			axs[i - 6].set_xlabel(col_x)
-		if i == 6:
-			axs[i - 6].set_ylabel(col_y)
-	plt.savefig(export_path + seq + 'DBSCAN-' + col_y + '-vs-' + col_x)
+plt.savefig(export_path + seq + 'Kmeans-' + col_y + '-vs-' + col_x)
 
+fig, axs = plt.subplots(1, 3, figsize=figsize, sharey=False, dpi=dpi)
+for i in range(3, 6):
+	df = pd.read_csv(source_path + file_list[i])
+	axs[i - 3].scatter(df[col_x], df[col_y])
+	axs[i - 3].title.set_text(file_list[i][:-4])
+	if i == 4:
+		axs[i - 3].set_xlabel(col_x)
+	if i == 3:
+		axs[i - 3].set_ylabel(col_y)
+plt.savefig(export_path + seq + 'MeanShift-' + col_y + '-vs-' + col_x)
+
+fig, axs = plt.subplots(1, 3, figsize=figsize, sharey=False, dpi=dpi)
+for i in range(6, 9):
+	df = pd.read_csv(source_path + file_list[i])
+	axs[i - 6].scatter(df[col_x], df[col_y])
+	axs[i - 6].title.set_text(file_list[i][:-4])
+	if i == 7:
+		axs[i - 6].set_xlabel(col_x)
+	if i == 6:
+		axs[i - 6].set_ylabel(col_y)
+plt.savefig(export_path + seq + 'DBSCAN-' + col_y + '-vs-' + col_x)
+
+#%% Plot other
 col_x = 'total_households'
 col_y = 'building_area'
 seq = '2-'
@@ -346,3 +458,73 @@ plt.show()
 # gini_and_avgstatus.plot(x='avg_status', y='gini', style='o')
 # plt.title('Randomly assign: ' + str(num_cluster) + ' clusters')
 # plt.show()
+#%% PLOTTING WITH NEW FUNCTION--iterate thru pairs of variables
+for pair in x_y_set:
+	var_x = pair[0]
+	var_y = pair[1]
+	plot_log_with_stat(x=var_x, y=var_y, files=ms_s, plotit=False)
+	plot_log_with_stat(x=var_x, y=var_y, files=km_s, plotit=False)
+	plot_log_with_stat(x=var_x, y=var_y, files=DB_s, plotit=False)
+	plot_log_with_stat(x=var_x, y=var_y, files=plz, plotit=False)
+	plt.close('all')
+
+#%% PLOTTING in congreged manner
+for pair in x_y_set:
+	var_x = pair[0]
+	var_y = pair[1]
+	plot_log_with_stat_dense(x=var_x, y=var_y, file_list=file_list, plotit=False)
+	plt.close('all' )
+
+
+ #%%
+x_y_set = [
+('building_area', 'Area_gini'),
+('building_area', 'building_density'),
+('building_area', 'high'),
+# ('building_area', 'avg_status'),
+('total_households', 'cluster_area'),
+('total_households', 'Area_gini'),
+('total_households', 'high'),
+('total_households', 'avg_status'),
+('Area_gini', 'Area_mean'),
+('Area_gini', 'building_density'),
+('Area_gini', 'high'),
+('Area_gini', 'low'),
+('Area_gini', 'avg_status'),
+('high', 'low'),
+('building_density', 'high')
+           ]
+
+all_cols = ['Unnamed: 0', 'label', 'building_area', 'total_households',
+       'total_status', 'num_buildings', 'cluster_area',
+       'Area_gini', 'Area_mean', 'building_density', 'high', 'mid', 'low',
+       'status_Gini', 'avg_status']
+
+file_list = \
+	[
+'DBSCAN-eps=184.csv',
+'DBSCAN-eps=141.csv',
+'DBSCAN-eps=111.5.csv',
+'Kmeans-k=20.csv',
+'Kmeans-k=50.csv',
+ 'Kmeans-k=100.csv',
+'MeanShift-bandwidth=560.csv',
+'MeanShift-bandwidth=350.csv',
+ 'MeanShift-bandwidth=265.csv',
+ 'Plazas_Over10K_Minus_Sun_Thiessen.csv']
+
+ms_s = ['MeanShift-bandwidth=560.csv',
+        'MeanShift-bandwidth=350.csv',
+        'MeanShift-bandwidth=265.csv']
+
+km_s = ['Kmeans-k=20.csv',
+        'Kmeans-k=50.csv',
+        'Kmeans-k=100.csv']
+
+DB_s = ['DBSCAN-eps=184.csv',
+        'DBSCAN-eps=141.csv',
+        'DBSCAN-eps=111.5.csv']
+
+plz = ['Plazas_Over10K_Minus_Sun_Thiessen.csv']
+
+

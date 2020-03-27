@@ -108,4 +108,7 @@ for g in info_list:
 
 			to_export = cluster_contor.merge(Gini_info, left_on='label', right_on='label')
 			# to_export = to_export[['label', 'status_Gini', 'avg_status', 'geometry']][to_export.label != -1]
-			to_export.to_file("Export/Cluster_contours/" + g[:-4] + "_contour_info.geojson", driver='GeoJSON')
+
+			# to_export.to_file("Export/Cluster_contours/" + g[:-4] + "_contour_info.geojson", driver='GeoJSON')
+			# to_export.to_file("Export/Cluster_contours/shapefile/" + g[:-4] + "_contour_info.geojson", driver='GeoJSON')
+			to_export.to_file("Export/Cluster_contours/geopackage/" + g[:-4] + "_contour_info.gpkg", driver='GPKG')
