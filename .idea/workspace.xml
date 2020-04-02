@@ -2,107 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ac6c33e-6626-492b-8e73-5d9bf49b8ed2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Data_Analysis-Gini_vs_Mean_Area.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/*Area_mean_|_Area_gini.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/*Histogram -- Household Area.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/Cluster_statistics_Analysis.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/._Gini_vs_AvgStatus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/0K_Minus__Gini_vs_AvgStatus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/Combined-Kmeans.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/DBSCAN-eps=111.5_Gini_vs_AvgStatus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/DBSCAN-eps=141_Gini_vs_AvgStatus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/DBSCAN-eps=184_Gini_vs_AvgStatus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/Kmeans-k=100_Gini_vs_AvgStatus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/Kmeans-k=20_Gini_vs_AvgStatus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/Kmeans-k=50_Gini_vs_AvgStatus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/MeanShift-bandwidth=265_Gini_vs_AvgStatus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/MeanShift-bandwidth=350_Gini_vs_AvgStatus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/MeanShift-bandwidth=560_Gini_vs_AvgStatus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/Plazas_Over10K_Minus_Sun_Thiessen_Gini_vs_AvgStatus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/_Gini_vs_AvgStatus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/old/DBSCAN-eps=111.5_Gini_vs_AvgStatus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/old/DBSCAN-eps=141_Gini_vs_AvgStatus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/old/DBSCAN-eps=184_Gini_vs_AvgStatus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/old/Kmeans-k=100_Gini_vs_AvgStatus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/old/Kmeans-k=20_Gini_vs_AvgStatus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/old/Kmeans-k=50_Gini_vs_AvgStatus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/old/MeanShift-bandwidth=265_Gini_vs_AvgStatus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/old/MeanShift-bandwidth=350_Gini_vs_AvgStatus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/old/MeanShift-bandwidth=560_Gini_vs_AvgStatus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/random/random-100.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/random/random-1000.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/random/random-150.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/random/random-175.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/random/random-200.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/random/random-50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/random/random-500.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Histogram -- Household Area.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Old/Result_graph/1-DBSCAN-cluster_area-vs-total_households.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Old/Result_graph/1-Kmeans-cluster_area-vs-total_households.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Old/Result_graph/1-MeanShift-cluster_area-vs-total_households.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Old/Result_graph/2-DBSCAN-building_area-vs-total_households.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Old/Result_graph/2-Kmeans-building_area-vs-total_households.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Old/Result_graph/2-MeanShift-building_area-vs-total_households.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Old/Result_graph/Maps/15687labels-DBSCAN-eps=111.5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Old/Result_graph/Maps/15687labels-DBSCAN-eps=141.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Old/Result_graph/Maps/15687labels-DBSCAN-eps=184.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Old/Result_graph/Maps/15687labels-Kmeans-k=100.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Old/Result_graph/Maps/15687labels-Kmeans-k=20.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Old/Result_graph/Maps/15687labels-Kmeans-k=50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Old/Result_graph/Maps/15687labels-MeanShift-bandwidth=265.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Old/Result_graph/Maps/15687labels-MeanShift-bandwidth=350.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Old/Result_graph/Maps/15687labels-MeanShift-bandwidth=560.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Old/Result_graph/Maps/NewData-Visulization.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Analysis_Cluster_statistics.py" beforeDir="false" afterPath="$PROJECT_DIR$/Analysis_Cluster_statistics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data_Analysis-Gini_vs_Mean_Area.py" beforeDir="false" afterPath="$PROJECT_DIR$/Data_Analysis-Gini_vs_Mean_Area.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data_Analysis-Visulization.py" beforeDir="false" afterPath="$PROJECT_DIR$/Data_Analysis-Visulization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Gini_status/._Gini_vs_AvgStatus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Gini_status/0K_Minus__Gini_vs_AvgStatus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Gini_status/Combined-Kmeans.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Gini_status/DBSCAN-eps=111.5_Gini_vs_AvgStatus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Gini_status/DBSCAN-eps=141_Gini_vs_AvgStatus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Gini_status/DBSCAN-eps=184_Gini_vs_AvgStatus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Gini_status/Kmeans-k=100_Gini_vs_AvgStatus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Gini_status/Kmeans-k=20_Gini_vs_AvgStatus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Gini_status/Kmeans-k=50_Gini_vs_AvgStatus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Gini_status/MeanShift-bandwidth=265_Gini_vs_AvgStatus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Gini_status/MeanShift-bandwidth=350_Gini_vs_AvgStatus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Gini_status/MeanShift-bandwidth=560_Gini_vs_AvgStatus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Gini_status/Plazas_Over10K_Minus_Sun_Thiessen_Gini_vs_AvgStatus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Gini_status/_Gini_vs_AvgStatus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Gini_status/old/DBSCAN-eps=111.5_Gini_vs_AvgStatus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Gini_status/old/DBSCAN-eps=141_Gini_vs_AvgStatus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Gini_status/old/DBSCAN-eps=184_Gini_vs_AvgStatus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Gini_status/old/Kmeans-k=100_Gini_vs_AvgStatus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Gini_status/old/Kmeans-k=20_Gini_vs_AvgStatus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Gini_status/old/Kmeans-k=50_Gini_vs_AvgStatus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Gini_status/old/MeanShift-bandwidth=265_Gini_vs_AvgStatus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Gini_status/old/MeanShift-bandwidth=350_Gini_vs_AvgStatus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Gini_status/old/MeanShift-bandwidth=560_Gini_vs_AvgStatus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Gini_status/random/random-100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Gini_status/random/random-1000.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Gini_status/random/random-150.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Gini_status/random/random-175.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Gini_status/random/random-200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Gini_status/random/random-50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Gini_status/random/random-500.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Result_graph/1-DBSCAN-cluster_area-vs-total_households.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Result_graph/1-Kmeans-cluster_area-vs-total_households.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Result_graph/1-MeanShift-cluster_area-vs-total_households.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Result_graph/2-DBSCAN-building_area-vs-total_households.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Result_graph/2-Kmeans-building_area-vs-total_households.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Result_graph/2-MeanShift-building_area-vs-total_households.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Result_graph/Maps/15687labels-DBSCAN-eps=111.5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Result_graph/Maps/15687labels-DBSCAN-eps=141.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Result_graph/Maps/15687labels-DBSCAN-eps=184.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Result_graph/Maps/15687labels-Kmeans-k=100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Result_graph/Maps/15687labels-Kmeans-k=20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Result_graph/Maps/15687labels-Kmeans-k=50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Result_graph/Maps/15687labels-MeanShift-bandwidth=265.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Result_graph/Maps/15687labels-MeanShift-bandwidth=350.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Result_graph/Maps/15687labels-MeanShift-bandwidth=560.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Result_graph/Maps/NewData-Visulization.png" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -377,7 +279,7 @@
       <workItem from="1583872442939" duration="9644000" />
       <workItem from="1585298387737" duration="848000" />
       <workItem from="1585313221672" duration="2152000" />
-      <workItem from="1585746881104" duration="10883000" />
+      <workItem from="1585746881104" duration="18886000" />
     </task>
     <servers />
   </component>
