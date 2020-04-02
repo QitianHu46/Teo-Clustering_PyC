@@ -2,194 +2,107 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ac6c33e-6626-492b-8e73-5d9bf49b8ed2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/Area_gini_|_Area_mean.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/Area_gini_|_avg_status.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/Area_gini_|_building_density.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/Area_gini_|_high.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/Area_gini_|_low.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/building_area_|_Area_gini.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/building_area_|_building_density.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/building_density_|_high.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/combined-1/Area_gini_|_Area_mean.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/combined-1/Area_gini_|_avg_status.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/combined-1/Area_gini_|_building_density.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/combined-1/Area_gini_|_high.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/combined-1/Area_gini_|_low.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/combined-1/building_area_|_Area_gini.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/combined-1/building_area_|_building_density.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/combined-1/building_area_|_high.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/combined-1/building_density_|_high.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/combined-1/high_|_low.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/combined-1/total_households_|_Area_gini.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/combined-1/total_households_|_avg_status.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/combined-1/total_households_|_cluster_area.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/combined-1/total_households_|_high.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/combined-2-partly_log/Area_gini_|_Area_mean.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/combined-2-partly_log/Area_gini_|_avg_status.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/combined-2-partly_log/Area_gini_|_building_density.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/combined-2-partly_log/Area_gini_|_high.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/combined-2-partly_log/Area_gini_|_low.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/combined-2-partly_log/building_area_|_Area_gini.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/combined-2-partly_log/building_area_|_building_density.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/combined-2-partly_log/building_area_|_high.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/combined-2-partly_log/building_density_|_high.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/combined-2-partly_log/high_|_low.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/combined-2-partly_log/total_households_|_Area_gini.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/combined-2-partly_log/total_households_|_avg_status.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/combined-2-partly_log/total_households_|_cluster_area.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/combined-2-partly_log/total_households_|_high.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/high_|_low.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/Area_gini_vs_Area_mean_DBSCAN-eps.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/Area_gini_vs_Area_mean_Kmeans-k.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/Area_gini_vs_Area_mean_MeanShift-bandwidth.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/Area_gini_vs_Area_mean_Plazas_Over10K_Minus_Sun_Thiessen.csv.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/Area_gini_vs_avg_status_DBSCAN-eps.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/Area_gini_vs_avg_status_Kmeans-k.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/Area_gini_vs_avg_status_MeanShift-bandwidth.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/Area_gini_vs_avg_status_Plazas_Over10K_Minus_Sun_Thiessen.csv.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/Area_gini_vs_building_density_DBSCAN-eps.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/Area_gini_vs_building_density_Kmeans-k.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/Area_gini_vs_building_density_MeanShift-bandwidth.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/Area_gini_vs_building_density_Plazas_Over10K_Minus_Sun_Thiessen.csv.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/Area_gini_vs_high_DBSCAN-eps.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/Area_gini_vs_high_Kmeans-k.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/Area_gini_vs_high_MeanShift-bandwidth.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/Area_gini_vs_high_Plazas_Over10K_Minus_Sun_Thiessen.csv.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/Area_gini_vs_low_DBSCAN-eps.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/Area_gini_vs_low_Kmeans-k.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/Area_gini_vs_low_MeanShift-bandwidth.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/Area_gini_vs_low_Plazas_Over10K_Minus_Sun_Thiessen.csv.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/building_area_vs_Area_giniKmeans-k.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/building_area_vs_Area_giniMeanShift-bandwidth.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/building_area_vs_Area_gini_DBSCAN-eps.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/building_area_vs_Area_gini_Kmeans-k.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/building_area_vs_Area_gini_MeanShift-bandwidth.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/building_area_vs_Area_gini_Plazas_Over10K_Minus_Sun_Thiessen.csv.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/building_area_vs_building_density_DBSCAN-eps.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/building_area_vs_building_density_Kmeans-k.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/building_area_vs_building_density_MeanShift-bandwidth.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/building_area_vs_building_density_Plazas_Over10K_Minus_Sun_Thiessen.csv.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/building_area_vs_high_DBSCAN-eps.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/building_area_vs_high_Kmeans-k.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/building_area_vs_high_MeanShift-bandwidth.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/building_area_vs_high_Plazas_Over10K_Minus_Sun_Thiessen.csv.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/building_area_vs_num_buildingsDBSCAN-eps.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/building_area_vs_num_buildingsKmeans-k.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/building_area_vs_num_buildingsMeanShift-bandwidth.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/building_area_vs_num_buildingsPlazas_Over10K_Minus_Sun_Thiessen.csv.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/building_density_vs_high_DBSCAN-eps.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/building_density_vs_high_Kmeans-k.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/building_density_vs_high_MeanShift-bandwidth.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/building_density_vs_high_Plazas_Over10K_Minus_Sun_Thiessen.csv.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/high_vs_low_DBSCAN-eps.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/high_vs_low_Kmeans-k.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/high_vs_low_MeanShift-bandwidth.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/high_vs_low_Plazas_Over10K_Minus_Sun_Thiessen.csv.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/total_households_vs_Area_gini_DBSCAN-eps.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/total_households_vs_Area_gini_Kmeans-k.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/total_households_vs_Area_gini_MeanShift-bandwidth.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/total_households_vs_Area_gini_Plazas_Over10K_Minus_Sun_Thiessen.csv.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/total_households_vs_avg_status_DBSCAN-eps.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/total_households_vs_avg_status_Kmeans-k.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/total_households_vs_avg_status_MeanShift-bandwidth.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/total_households_vs_avg_status_Plazas_Over10K_Minus_Sun_Thiessen.csv.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/total_households_vs_cluster_area_DBSCAN-eps.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/total_households_vs_cluster_area_Kmeans-k.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/total_households_vs_cluster_area_MeanShift-bandwidth.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/total_households_vs_cluster_area_Plazas_Over10K_Minus_Sun_Thiessen.csv.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/total_households_vs_high_DBSCAN-eps.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/total_households_vs_high_Kmeans-k.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/total_households_vs_high_MeanShift-bandwidth.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/separate-1/total_households_vs_high_Plazas_Over10K_Minus_Sun_Thiessen.csv.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/total_households_|_Area_gini.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/total_households_|_avg_status.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/total_households_|_cluster_area.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/total_households_|_high.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/Geojson/DBSCAN-eps=111.5_contour_info.geojson" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/Geojson/DBSCAN-eps=141_contour_info.geojson" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/Geojson/DBSCAN-eps=184_contour_info.geojson" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/Geojson/Kmeans-k=100_contour_info.geojson" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/Geojson/Kmeans-k=20_contour_info.geojson" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/Geojson/Kmeans-k=50_contour_info.geojson" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/Geojson/MeanShift-bandwidth=265_contour_info.geojson" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/Geojson/MeanShift-bandwidth=350_contour_info.geojson" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/Geojson/MeanShift-bandwidth=560_contour_info.geojson" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/Geojson/Plazas_Over10K_Minus_Sun_Thiessen_contour_info.geojson" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/geopackage/DBSCAN-eps=111.5_contour_info.gpkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/geopackage/DBSCAN-eps=141_contour_info.gpkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/geopackage/DBSCAN-eps=184_contour_info.gpkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/geopackage/Kmeans-k=100_contour_info.gpkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/geopackage/Kmeans-k=20_contour_info.gpkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/geopackage/Kmeans-k=50_contour_info.gpkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/geopackage/MeanShift-bandwidth=265_contour_info.gpkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/geopackage/MeanShift-bandwidth=350_contour_info.gpkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/geopackage/MeanShift-bandwidth=560_contour_info.gpkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/geopackage/Plazas_Over10K_Minus_Sun_Thiessen_contour_info.gpkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/DBSCAN-eps=111.5_contour_info.cpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/DBSCAN-eps=111.5_contour_info.dbf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/DBSCAN-eps=111.5_contour_info.prj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/DBSCAN-eps=111.5_contour_info.shp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/DBSCAN-eps=111.5_contour_info.shx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/DBSCAN-eps=141_contour_info.cpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/DBSCAN-eps=141_contour_info.dbf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/DBSCAN-eps=141_contour_info.prj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/DBSCAN-eps=141_contour_info.shp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/DBSCAN-eps=141_contour_info.shx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/DBSCAN-eps=184_contour_info.cpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/DBSCAN-eps=184_contour_info.dbf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/DBSCAN-eps=184_contour_info.prj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/DBSCAN-eps=184_contour_info.shp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/DBSCAN-eps=184_contour_info.shx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/Kmeans-k=100_contour_info.cpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/Kmeans-k=100_contour_info.dbf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/Kmeans-k=100_contour_info.prj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/Kmeans-k=100_contour_info.shp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/Kmeans-k=100_contour_info.shx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/Kmeans-k=20_contour_info.cpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/Kmeans-k=20_contour_info.dbf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/Kmeans-k=20_contour_info.prj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/Kmeans-k=20_contour_info.shp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/Kmeans-k=20_contour_info.shx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/Kmeans-k=50_contour_info.cpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/Kmeans-k=50_contour_info.dbf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/Kmeans-k=50_contour_info.prj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/Kmeans-k=50_contour_info.shp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/Kmeans-k=50_contour_info.shx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/MeanShift-bandwidth=265_contour_info.cpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/MeanShift-bandwidth=265_contour_info.dbf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/MeanShift-bandwidth=265_contour_info.prj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/MeanShift-bandwidth=265_contour_info.shp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/MeanShift-bandwidth=265_contour_info.shx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/MeanShift-bandwidth=350_contour_info.cpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/MeanShift-bandwidth=350_contour_info.dbf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/MeanShift-bandwidth=350_contour_info.prj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/MeanShift-bandwidth=350_contour_info.shp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/MeanShift-bandwidth=350_contour_info.shx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/MeanShift-bandwidth=560_contour_info.cpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/MeanShift-bandwidth=560_contour_info.dbf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/MeanShift-bandwidth=560_contour_info.prj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/MeanShift-bandwidth=560_contour_info.shp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/MeanShift-bandwidth=560_contour_info.shx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/Plazas_Over10K_Minus_Sun_Thiessen_contour_info.cpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/Plazas_Over10K_Minus_Sun_Thiessen_contour_info.dbf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/Plazas_Over10K_Minus_Sun_Thiessen_contour_info.prj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/Plazas_Over10K_Minus_Sun_Thiessen_contour_info.shp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/Cluster_contours/shapfile/Plazas_Over10K_Minus_Sun_Thiessen_contour_info.shx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Teo-Clustering.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Teo-Clustering.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data_Analysis-Gini_vs_Mean_Area.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/*Area_mean_|_Area_gini.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/*Histogram -- Household Area.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/Cluster_statistics_Analysis.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/._Gini_vs_AvgStatus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/0K_Minus__Gini_vs_AvgStatus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/Combined-Kmeans.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/DBSCAN-eps=111.5_Gini_vs_AvgStatus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/DBSCAN-eps=141_Gini_vs_AvgStatus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/DBSCAN-eps=184_Gini_vs_AvgStatus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/Kmeans-k=100_Gini_vs_AvgStatus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/Kmeans-k=20_Gini_vs_AvgStatus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/Kmeans-k=50_Gini_vs_AvgStatus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/MeanShift-bandwidth=265_Gini_vs_AvgStatus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/MeanShift-bandwidth=350_Gini_vs_AvgStatus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/MeanShift-bandwidth=560_Gini_vs_AvgStatus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/Plazas_Over10K_Minus_Sun_Thiessen_Gini_vs_AvgStatus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/_Gini_vs_AvgStatus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/old/DBSCAN-eps=111.5_Gini_vs_AvgStatus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/old/DBSCAN-eps=141_Gini_vs_AvgStatus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/old/DBSCAN-eps=184_Gini_vs_AvgStatus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/old/Kmeans-k=100_Gini_vs_AvgStatus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/old/Kmeans-k=20_Gini_vs_AvgStatus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/old/Kmeans-k=50_Gini_vs_AvgStatus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/old/MeanShift-bandwidth=265_Gini_vs_AvgStatus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/old/MeanShift-bandwidth=350_Gini_vs_AvgStatus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/old/MeanShift-bandwidth=560_Gini_vs_AvgStatus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/random/random-100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/random/random-1000.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/random/random-150.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/random/random-175.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/random/random-200.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/random/random-50.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Hidden/Gini_status/random/random-500.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Histogram -- Household Area.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Old/Result_graph/1-DBSCAN-cluster_area-vs-total_households.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Old/Result_graph/1-Kmeans-cluster_area-vs-total_households.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Old/Result_graph/1-MeanShift-cluster_area-vs-total_households.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Old/Result_graph/2-DBSCAN-building_area-vs-total_households.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Old/Result_graph/2-Kmeans-building_area-vs-total_households.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Old/Result_graph/2-MeanShift-building_area-vs-total_households.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Old/Result_graph/Maps/15687labels-DBSCAN-eps=111.5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Old/Result_graph/Maps/15687labels-DBSCAN-eps=141.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Old/Result_graph/Maps/15687labels-DBSCAN-eps=184.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Old/Result_graph/Maps/15687labels-Kmeans-k=100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Old/Result_graph/Maps/15687labels-Kmeans-k=20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Old/Result_graph/Maps/15687labels-Kmeans-k=50.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Old/Result_graph/Maps/15687labels-MeanShift-bandwidth=265.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Old/Result_graph/Maps/15687labels-MeanShift-bandwidth=350.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Old/Result_graph/Maps/15687labels-MeanShift-bandwidth=560.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/Old/Result_graph/Maps/NewData-Visulization.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cluster_Countour_Processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cluster_Countour_Processing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Analysis_Cluster_statistics.py" beforeDir="false" afterPath="$PROJECT_DIR$/Analysis_Cluster_statistics.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data_Analysis-Visulization.py" beforeDir="false" afterPath="$PROJECT_DIR$/Data_Analysis-Visulization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Cluster_contours/DBSCAN-eps=111.5_contour_info.geojson" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Cluster_contours/DBSCAN-eps=141_contour_info.geojson" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Cluster_contours/DBSCAN-eps=184_contour_info.geojson" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Cluster_contours/Kmeans-k=100_contour_info.geojson" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Cluster_contours/Kmeans-k=20_contour_info.geojson" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Cluster_contours/Kmeans-k=50_contour_info.geojson" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Cluster_contours/MeanShift-bandwidth=265_contour_info.geojson" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Cluster_contours/MeanShift-bandwidth=350_contour_info.geojson" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Cluster_contours/MeanShift-bandwidth=560_contour_info.geojson" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/Cluster_contours/Plazas_Over10K_Minus_Sun_Thiessen_contour_info.geojson" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Gini_status/._Gini_vs_AvgStatus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Gini_status/0K_Minus__Gini_vs_AvgStatus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Gini_status/Combined-Kmeans.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Gini_status/DBSCAN-eps=111.5_Gini_vs_AvgStatus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Gini_status/DBSCAN-eps=141_Gini_vs_AvgStatus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Gini_status/DBSCAN-eps=184_Gini_vs_AvgStatus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Gini_status/Kmeans-k=100_Gini_vs_AvgStatus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Gini_status/Kmeans-k=20_Gini_vs_AvgStatus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Gini_status/Kmeans-k=50_Gini_vs_AvgStatus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Gini_status/MeanShift-bandwidth=265_Gini_vs_AvgStatus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Gini_status/MeanShift-bandwidth=350_Gini_vs_AvgStatus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Gini_status/MeanShift-bandwidth=560_Gini_vs_AvgStatus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Gini_status/Plazas_Over10K_Minus_Sun_Thiessen_Gini_vs_AvgStatus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Gini_status/_Gini_vs_AvgStatus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Gini_status/old/DBSCAN-eps=111.5_Gini_vs_AvgStatus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Gini_status/old/DBSCAN-eps=141_Gini_vs_AvgStatus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Gini_status/old/DBSCAN-eps=184_Gini_vs_AvgStatus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Gini_status/old/Kmeans-k=100_Gini_vs_AvgStatus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Gini_status/old/Kmeans-k=20_Gini_vs_AvgStatus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Gini_status/old/Kmeans-k=50_Gini_vs_AvgStatus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Gini_status/old/MeanShift-bandwidth=265_Gini_vs_AvgStatus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Gini_status/old/MeanShift-bandwidth=350_Gini_vs_AvgStatus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Gini_status/old/MeanShift-bandwidth=560_Gini_vs_AvgStatus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Gini_status/random/random-100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Gini_status/random/random-1000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Gini_status/random/random-150.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Gini_status/random/random-175.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Gini_status/random/random-200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Gini_status/random/random-50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Gini_status/random/random-500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Result_graph/1-DBSCAN-cluster_area-vs-total_households.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Result_graph/1-Kmeans-cluster_area-vs-total_households.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Result_graph/1-MeanShift-cluster_area-vs-total_households.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Result_graph/2-DBSCAN-building_area-vs-total_households.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Result_graph/2-Kmeans-building_area-vs-total_households.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Result_graph/2-MeanShift-building_area-vs-total_households.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Result_graph/Maps/15687labels-DBSCAN-eps=111.5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Result_graph/Maps/15687labels-DBSCAN-eps=141.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Result_graph/Maps/15687labels-DBSCAN-eps=184.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Result_graph/Maps/15687labels-Kmeans-k=100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Result_graph/Maps/15687labels-Kmeans-k=20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Result_graph/Maps/15687labels-Kmeans-k=50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Result_graph/Maps/15687labels-MeanShift-bandwidth=265.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Result_graph/Maps/15687labels-MeanShift-bandwidth=350.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Result_graph/Maps/15687labels-MeanShift-bandwidth=560.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/Result_graph/Maps/NewData-Visulization.png" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -246,13 +159,13 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/Old_Files" />
       <recent name="$PROJECT_DIR$/Data" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -463,6 +376,8 @@
       <workItem from="1583868142254" duration="438000" />
       <workItem from="1583872442939" duration="9644000" />
       <workItem from="1585298387737" duration="848000" />
+      <workItem from="1585313221672" duration="2152000" />
+      <workItem from="1585746881104" duration="10883000" />
     </task>
     <servers />
   </component>

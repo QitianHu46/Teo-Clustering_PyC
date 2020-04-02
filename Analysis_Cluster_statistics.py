@@ -71,8 +71,6 @@ def num_to_Gini(low, mid, high):
 
 
 # %% Load file lists
-
-
 file_list = [i for i in walk(source_path)][0][2]
 # extract all files that contain list of cluster info
 # list of cluster contours
@@ -82,7 +80,6 @@ geo_list = list(filter(lambda x: (len(x) > 10) and ((".geojson" in x) or (".shp"
 # thess_plg.to_file('Export/Hidden/Plazas_Over10K_Minus_Sun_Thiessen.shp')
 
 # %% Read building map
-
 res = gpd.read_file('Data/Angela_Oct2019/MergedResidences.shp')
 res['Area2'] = res['geometry'].to_crs({'init': 'epsg:3395'}) \
 	.map(lambda p: p.area)
@@ -99,7 +96,7 @@ buildings['num_buildings'] = 1
 buildings_total_status = buildings.copy()
 buildings_total_status['Status'] = buildings['Status'] * buildings['Households']
 # %% Make the Households 耗时一分钟
-re_calculate_households = False
+re_calculate_households = True
 if re_calculate_households:
 	households = pd.DataFrame()
 	for row in tqdm.tqdm(buildings.iterrows()):

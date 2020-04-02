@@ -1,11 +1,6 @@
 """
-This file contains all analysis related to the Gini vs. average Status graph and related analysis
-Exports like "Add Gini and avg_status Column to Cluster_contour geoJSO"
-is in New_Data_Processing.py
 
-Feb 24, 2020 update:
-
-This file also contains some follow-up analysis I do to explore the patterns of the
+This file contains some follow-up analysis I do to explore the patterns of the
 cluster statistics
 """
 # %% ########## Import and Set Path ##########
@@ -45,37 +40,6 @@ def plt_ideal(a, b):
 	X = np.arange(0, 1, 0.0001)
 	Y = f(X, a, b)
 	plt.scatter(X * (b - a) + a, Y, s=1, alpha=.8, c='orange')
-
-
-def plot_log_with_stat(x, y, files, xlabel='x', ylabel='y', title='title', plotit=True):
-	"""
-	plot on single graph, using scipy and seaborn, with 95% CI and relevant statistics
-	:param x:
-	:param y:
-	:param xlabel:
-	:param ylabel:
-	:return: the object of the graph
-	"""
-	num = len(files)
-	fig = plt.figure(figsize=(6 * num, 6), dpi=1000)
-	for i in range(num):
-		dtf = pd.read_csv(source_path + files[i])
-		fig.add_subplot(1, num, i + 1)
-		sns.regplot(x=np.log(dtf[x]), y=np.log(dtf[y]), ci=95, fit_reg=True)
-		plt.xlabel(x)
-		plt.ylabel(y)
-		slope, intercept, corr_coeff, p_value, std_err = scipy.stats.linregress(np.log(dtf[x]), np.log(dtf[y]))
-		info = list(map(lambda k: round(k, 3), [slope, intercept, corr_coeff ** 2, p_value, std_err]))
-		title_str = files[i][:-4] + '\nslope: ' + str(info[0]) + ', intercept: ' + str(info[1]) + \
-		            ', \nr squared:' + str(info[2])
-		plt.title(title_str)
-	# ax.plot()
-	if plotit:
-		plt.show()
-	else:
-		plt.savefig('Export/3-7_Cluster_Statistics/relatin_graphs/'
-		            + x + '_vs_' + y + '_' + files[0].split('=')[0] + '.png')
-	return
 
 
 def plot_log_with_stat_dense(x, y, file_list, xlabel='x', ylabel='y', title='title',
@@ -143,11 +107,6 @@ def plot_log_with_stat_dense(x, y, file_list, xlabel='x', ylabel='y', title='tit
 	return
 
 
-# %% initialize path
-file_list = [i for i in walk(source_path)][0][2]
-if '.DS_Store' in file_list:
-	file_list.remove('.DS_Store')
-
 # %% =========plot cluster characterstics: define the parametres and names=========
 x_y_set = [
 	('building_area', 'Area_gini'),
@@ -172,19 +131,6 @@ dont_log_cols = ['Unnamed: 0', 'label', 'building_area', 'total_households',
             'Area_gini', 'Area_mean', 'building_density', 'high', 'mid', 'low',
             'status_Gini', 'avg_status']
 
-file_list = \
-	[
-		'DBSCAN-eps=184.csv',
-		'DBSCAN-eps=141.csv',
-		'DBSCAN-eps=111.5.csv',
-		'Kmeans-k=20.csv',
-		'Kmeans-k=50.csv',
-		'Kmeans-k=100.csv',
-		'MeanShift-bandwidth=560.csv',
-		'MeanShift-bandwidth=350.csv',
-		'MeanShift-bandwidth=265.csv',
-		'Plazas_Over10K_Minus_Sun_Thiessen.csv']
-
 ms_s = ['MeanShift-bandwidth=560.csv',
         'MeanShift-bandwidth=350.csv',
         'MeanShift-bandwidth=265.csv']
@@ -199,12 +145,7 @@ DB_s = ['DBSCAN-eps=184.csv',
 
 plz = ['Plazas_Over10K_Minus_Sun_Thiessen.csv']
 
-# %% Do PLOTTING in congreged manner
-for pair in x_y_set:
-	var_x = pair[0]
-	var_y = pair[1]
-	plot_log_with_stat_dense(x=var_x, y=var_y, file_list=file_list, show_plot=False)
-	plt.close('all')
+file_list = ms_s + km_s + DB_s + plz
 
 # %% ########## plot HISTOGRAM of household area ##########
 households = gpd.read_file('Export/Total_Households_info.geojson')
