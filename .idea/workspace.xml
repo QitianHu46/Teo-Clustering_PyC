@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ac6c33e-6626-492b-8e73-5d9bf49b8ed2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/*Random_Comparison_plot-dont_split_building.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/*histogram-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/Saved/Area_gini_|_avg_status.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data_Analysis-Gini_vs_Mean_Area.py" beforeDir="false" afterPath="$PROJECT_DIR$/Data_Analysis-Gini_vs_Mean_Area.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data_Analysis-Visulization.py" beforeDir="false" afterPath="$PROJECT_DIR$/Data_Analysis-Visulization.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data_Analysis-Gini_vs_Mean_Area.py" beforeDir="false" afterPath="$PROJECT_DIR$/Data_Explr_Gini_vs_Mean_Area.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data_Analysis-Visulization.py" beforeDir="false" afterPath="$PROJECT_DIR$/Data_Explr_Visulization.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/Area_gini_|_avg_status.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/Cluster_statistics_Analysis.md" beforeDir="false" afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/Cluster_statistics_Analysis.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/building_area_|_Area_gini.png" beforeDir="false" afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/building_area_|_Area_gini.png" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -279,7 +285,8 @@
       <workItem from="1583872442939" duration="9644000" />
       <workItem from="1585298387737" duration="848000" />
       <workItem from="1585313221672" duration="2152000" />
-      <workItem from="1585746881104" duration="18886000" />
+      <workItem from="1585746881104" duration="31252000" />
+      <workItem from="1586101007025" duration="19000" />
     </task>
     <servers />
   </component>

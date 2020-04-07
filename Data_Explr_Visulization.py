@@ -56,7 +56,7 @@ def gini(x):
 	return g
 
 
-def plt_ideal(a, b):
+def plt_ideal(a, b, c='orange'):
 	"""
 	draw an ideal reference curve for graph of mean area vs. Gini
 	:param a:
@@ -66,7 +66,7 @@ def plt_ideal(a, b):
 	f = lambda X, a, b: (abs(a - b) * X * (1 - X)) / ((1 - X) * a + X * b)
 	X = np.arange(0, 1, 0.0001)
 	Y = f(X, a, b)
-	plt.scatter(X * (b - a) + a, Y, s=1, alpha=.8, c='orange')
+	plt.scatter(X * (b - a) + a, Y, s=1, alpha=.8, c=c)
 
 
 def plot_log_with_stat(x, y, files, xlabel='x', ylabel='y', title='title', plotit=True):
@@ -102,14 +102,18 @@ def plot_log_with_stat(x, y, files, xlabel='x', ylabel='y', title='title', ploti
 
 def plot_log_with_stat_dense(x, y, file_list, xlabel='x', ylabel='y', title='title',
                              show_plot=True, gini_ideal=False, source_path='Export/3-7_Cluster_Statistics/',
-                             save_path=None, do_linear_regres=True):
+                             save_path=None, do_linear_regres=True, random_comp=False):
 	"""
 	plot on single graph, using scipy and seaborn, with 95% CI and relevant statistics
-	:param show_plot:
-	:param source_path:
-	:param gini_ideal:
-	:param x:
-	:param y:
+	:param random_comp: to use the num_building info to produce a randomized comparison to check
+		the real effect of clustering algorithm.
+	:param do_linear_regres:
+	:param save_path: the path to save the graph to
+	:param show_plot: if True then show the plot; if False save it as file
+	:param source_path: directory of the data sources
+	:param gini_ideal: whether to plot the ideal gini curve
+	:param x: name of variable to plot on x-axis
+	:param y: name of variable to plot on y-axis
 	:param xlabel:
 	:param ylabel:
 	:return: the object of the graph
@@ -118,10 +122,13 @@ def plot_log_with_stat_dense(x, y, file_list, xlabel='x', ylabel='y', title='tit
 	dont_log = dont_log_cols
 	assert len(file_list) == 10
 	fig = plt.figure(figsize=(25, 30), dpi=300)
+	if random_comp:
+		areas = list(gpd.read_file('Export/Total_Households_info.geojson').Area)
 	for i in range(len(file_list)):
-		dtf = pd.read_csv(source_path + file_list[i])[[x, y]]
+		dtf = pd.read_csv(source_path + file_list[i])
 		fig.add_subplot(4, 3, i + 1)
 		remove_notice = ''
+		# log data if necessary
 		if x in dont_log:
 			data_x = dtf[x]
 			x_label = x
@@ -134,6 +141,15 @@ def plot_log_with_stat_dense(x, y, file_list, xlabel='x', ylabel='y', title='tit
 		else:
 			data_y = np.log(dtf[y])
 			y_label = 'log ' + y
+
+		if random_comp: # random comparison for the gini vs. mean graph
+			assert y == 'Area_gini' and x == 'Area_mean'
+			clusters = []
+			for n in dtf.num_buildings:
+				clusters.append(areas[:n])
+				areas = areas[n:]
+			data_x = [i for i in map(lambda _: sum(_) / len(_), clusters)]
+			data_y = [i for i in map(gini, clusters)]
 
 		if do_linear_regres:
 			sns.regplot(x=data_x, y=data_y, ci=95, fit_reg=True)
@@ -157,14 +173,17 @@ def plot_log_with_stat_dense(x, y, file_list, xlabel='x', ylabel='y', title='tit
 		plt.show()
 	else:
 		if save_path:
-			plt.savefig(save_path + x + '_|_' + y + '.png')
+			if random_comp:
+				plt.savefig(save_path + x + '_|_' + y + '_Random_Comparison' + '.png')
+			else:
+				plt.savefig(save_path + x + '_|_' + y + '.png')
 			print('saved to new path!')
 		else:
 			plt.savefig('Export/3-7_Cluster_Statistics/relatin_graphs/' + x + '_|_' + y + '.png')
 			print('saved to deafult path!')
 	return
 
-
+#%%
 if __name__ == "__main__":
 	# %% =========plot cluster characterstics: define the parametres and names=========
 	x_y_set = [
@@ -213,11 +232,10 @@ if __name__ == "__main__":
 	# %% pltting using matplotlib
 	plt.hist(households[households.Status == 2]['Area'], log=True, bins=50)
 	plt.hist(households[households.Status == 1]['Area'], log=True, bins=200, color='red')
-
 	plt.hist(households[households.Status == 3]['Area'], log=True, bins=1, color='black')
-	plt.title('Counting numbers of households\nRed: high status, blue')
+	plt.title('Counting numbers of households\nRed: high status, blue: mid status. Low status ignored (=25)')
 	plt.xlabel('Household Area (sq meter)')
 	plt.ylabel('Log Count')
 	# plt.savefig('Export/3-7_Cluster_Statistics/relatin_graphs/Histogram-household_area-rich.png')
 	plt.savefig('/Users/qitianhu/Desktop/histogram-2.png')
-# plt.show()
+plt.show()
