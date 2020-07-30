@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ac6c33e-6626-492b-8e73-5d9bf49b8ed2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/*Random_Comparison_plot-dont_split_building.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/*histogram-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/Saved/Area_gini_|_avg_status.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data_Analysis-Gini_vs_Mean_Area.py" beforeDir="false" afterPath="$PROJECT_DIR$/Data_Explr_Gini_vs_Mean_Area.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data_Analysis-Visulization.py" beforeDir="false" afterPath="$PROJECT_DIR$/Data_Explr_Visulization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/Area_gini_|_avg_status.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/Cluster_statistics_Analysis.md" beforeDir="false" afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/Cluster_statistics_Analysis.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/building_area_|_Area_gini.png" beforeDir="false" afterPath="$PROJECT_DIR$/Export/3-7_Cluster_Statistics/relatin_graphs/building_area_|_Area_gini.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visulization.R" beforeDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,6 +50,10 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -75,18 +71,6 @@
       <recent name="$PROJECT_DIR$/Old_Files" />
       <recent name="$PROJECT_DIR$/Data" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Python.Analysis_Cluster_statistics">
     <configuration name="Analysis_Area" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -287,6 +271,9 @@
       <workItem from="1585313221672" duration="2152000" />
       <workItem from="1585746881104" duration="31252000" />
       <workItem from="1586101007025" duration="19000" />
+      <workItem from="1586268292544" duration="472000" />
+      <workItem from="1586797540296" duration="732000" />
+      <workItem from="1589823298919" duration="2000" />
     </task>
     <servers />
   </component>
@@ -338,9 +325,9 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Teo_Clustering_PyC$Area_Analysis.coverage" NAME="Area_Analysis Coverage Results" MODIFIED="1565610423700" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Teo_Clustering_PyC$Analysis_Area.coverage" NAME="Analysis_Area Coverage Results" MODIFIED="1565615778510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Teo_Clustering_PyC$Analysis_Cluster.coverage" NAME="Analysis_Cluster Coverage Results" MODIFIED="1569344601102" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Teo_Clustering_PyC$Area_Analysis.coverage" NAME="Area_Analysis Coverage Results" MODIFIED="1565610423700" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Teo_Clustering_PyC$scratch.coverage" NAME="scratch Coverage Results" MODIFIED="1565615767219" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
   </component>
 </project>
